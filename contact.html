@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<!-- Intl Phone Input CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
+
+<style>
+
+/* TOP BAR */
+.top-bar {
+  background: linear-gradient(to right, #000, #222);
+  color: white;
+  font-size: 14px;
+  padding: 5px 0;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #f5f5f5;
+}
+
+.brand-text {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+/* SECTION */
+.section {
+  padding: 60px 0;
+}
+
+/* CONTACT BOX */
+.contact-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ICON */
+.icon-box i {
+  font-size: 30px;
+  color: #d32f2f;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: white;
+}
+
+/* Phone input full width fix */
+.iti {
+  width: 100%;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 🔝 TOP BAR -->
+<div class="top-bar">
+  <div class="container d-flex justify-content-between">
+    <div><i class="bi bi-envelope"></i> geezee@gmail.com</div>
+    <div><i class="bi bi-geo-alt"></i> Chennai, Tamil Nadu</div>
+  </div>
+</div>
+
+<!-- 🔥 NAVBAR -->
+<nav class="navbar navbar-expand-lg shadow-sm">
+  <div class="container">
+
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="https://via.placeholder.com/40" class="me-2">
+      <span class="brand-text">GEEZEE</span>
+    </a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+        <li class="nav-item"><a class="nav-link active text-danger" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!-- 📞 CONTACT SECTION -->
+<section class="section">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <p class="text-center mb-5">We’d love to hear from you!</p>
+
+    <div class="row">
+
+      <!-- CONTACT INFO -->
+      <div class="col-md-5">
+        <div class="contact-box mb-4">
+          <div class="icon-box mb-3">
+            <i class="bi bi-geo-alt-fill"></i>
+          </div>
+          <h5>Address</h5>
+          <p>Chennai, Tamil Nadu, India</p>
+        </div>
+
+        <div class="contact-box mb-4">
+          <div class="icon-box mb-3">
+            <i class="bi bi-envelope-fill"></i>
+          </div>
+          <h5>Email</h5>
+          <p>geezee@gmail.com</p>
+        </div>
+
+        <div class="contact-box">
+          <div class="icon-box mb-3">
+            <i class="bi bi-telephone-fill"></i>
+          </div>
+          <h5>Phone</h5>
+          <p>xxxxxx</p>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div class="col-md-7">
+        <div class="contact-box">
+
+          <!-- SUCCESS MESSAGE -->
+          <div id="successMessage" class="alert alert-success text-center" style="display:none;">
+            ✅ Your message has been sent successfully!
+          </div>
+
+          <h4 class="mb-3">Send Message</h4>
+
+          <form id="contactForm">
+
+            <!-- 🌍 PREMIUM PHONE INPUT -->
+            <div class="mb-3">
+              <label class="form-label">Mobile Number</label>
+              <input id="phone" type="tel" class="form-control" required>
+            </div>
+
+            <!-- EMAIL -->
+            <input type="email" class="form-control mb-3" placeholder="Your Email" required>
+
+            <!-- SUBJECT -->
+            <input type="text" class="form-control mb-3" placeholder="Subject">
+
+            <!-- MESSAGE -->
+            <textarea class="form-control mb-3" rows="5" placeholder="Message"></textarea>
+
+            <button type="submit" class="btn btn-danger w-100">Send Message</button>
+
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 🗺️ CHENNAI MAP -->
+<section>
+  <iframe 
+    src="https://www.google.com/maps?q=Chennai&output=embed" 
+    width="100%" 
+    height="300" 
+    style="border:0;">
+  </iframe>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center p-3">
+  © 2026 GEEZEE | All Rights Reserved
+</footer>
+
+<!-- JS FILES -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Intl Phone Input -->
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+
+<script>
+const input = document.querySelector("#phone");
+
+const iti = window.intlTelInput(input, {
+    initialCountry: "in",
+    separateDialCode: true,
+    preferredCountries: ["in", "us", "gb"],
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js"
+});
+
+// FORM SUBMIT
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    if (!iti.isValidNumber()) {
+        alert("❌ Please enter a valid phone number");
+        return;
+    }
+
+    let fullNumber = iti.getNumber();
+
+    console.log("Phone:", fullNumber);
+
+    document.getElementById("successMessage").style.display = "block";
+
+    this.reset();
+
+    setTimeout(() => {
+        document.getElementById("successMessage").style.display = "none";
+    }, 3000);
+});
+</script>
+
+</body>
+</html>
